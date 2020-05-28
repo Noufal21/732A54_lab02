@@ -1,0 +1,4 @@
+Row(year=1996, MaxTemp=30.8, MinTemp=-41.7)
+Row(year=1995, MaxTemp=30.8, MinTemp=-37.6)
+Row(year=1958, MaxTemp=30.8, MinTemp=-43.0)
+Row(year=1978, MaxTemp=30.8, MinTemp=-47.7)
