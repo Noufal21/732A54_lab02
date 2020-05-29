@@ -1,2 +1,2 @@
-Row(year=1997, month=11, Avgmontlytemperature=0.09007686932215243)
-Row(year=1999, month=12, Avgmontlytemperature=0.08985704560925806)
+Row(year=1997, month=11, Avgmontlytemperature=64.45000000000006)
+Row(year=2009, month=11, Avgmontlytemperature=64.21666666666665)

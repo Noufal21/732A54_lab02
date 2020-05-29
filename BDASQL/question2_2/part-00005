@@ -1,4 +1,4 @@
-Row(year=1975, month=9, CountTemp=369)
-Row(year=1970, month=6, CountTemp=369)
 Row(year=1970, month=9, CountTemp=369)
+Row(year=1970, month=6, CountTemp=369)
 Row(year=1976, month=5, CountTemp=369)
+Row(year=1975, month=9, CountTemp=369)

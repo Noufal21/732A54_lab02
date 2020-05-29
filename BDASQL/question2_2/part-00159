@@ -1,6 +1,6 @@
-Row(year=1950, month=8, CountTemp=49)
 Row(year=1950, month=7, CountTemp=49)
-Row(year=1966, month=3, CountTemp=47)
+Row(year=1950, month=8, CountTemp=49)
 Row(year=1992, month=11, CountTemp=47)
 Row(year=1970, month=11, CountTemp=47)
 Row(year=1950, month=6, CountTemp=47)
+Row(year=1966, month=3, CountTemp=47)

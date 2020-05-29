@@ -64,15 +64,16 @@ avg_year_month_sation_temperature.rdd.saveAsTextFile("BDASQL/question3")
 
 station_maximum_temperature = tempTable.groupBy('station').agg(F.max('value').alias('MaxTemp')).orderBy(['MaxTemp'],ascending=[0])
 
-station_maximum_precipitation = precipitationTable.groupBy('year','month','date','station').agg(F.max('value').alias('MaxPrecipitation')).orderBy(['MaxPrecipitation'],ascending=[0])
-
+station_maximum_precipitation = precipitationTable.groupBy('year','month','date','station').agg(F.sum('value').alias('sumPrecipitation')).orderBy(['sumPrecipitation'],ascending=[0])
+station_maximum_precipitation = station_maximum_precipitation.groupBy('station').agg(F.max('sumPrecipitation').alias('maxPrecipitation')).orderBy(['maxPrecipitation'],ascending=[0])
 join_table = station_maximum_temperature.join(station_maximum_precipitation,station_maximum_temperature['station'] == station_maximum_precipitation['station'],'inner' )
-join_table.where(col('MaxPrecipitation') >= 10).where(col('MaxPrecipitation') <= 1000).where(col("MaxTemp") >= 25).where(col('MaxTemp') <=30)
+join_table.where(col('maxPrecipitation') >= 10).where(col('maxPrecipitation') <= 1000).where(col("MaxTemp") >= 25).where(col('MaxTemp') <=30)
 join_table.rdd.saveAsTextFile("BDASQL/question4")
 
 
 #ostergotlandTable
 OT = ostergotlandTable.withColumnRenamed('station','ST')
-ostergotland_precipitationTable = precipitationTable.join(OT,OT['ST']== precipitationTable['station'],'inner')
-ostergotland_precipitationTable_avg = ostergotland_precipitationTable.where(col('year') >= 1993).where(col('year') <= 2016).groupBy('year','month').agg(F.avg('value').alias('Avgmontlytemperature')).orderBy(['Avgmontlytemperature'],ascending=[0])
+precipitation_sum = precipitationTable.groupBy('year','month','station').agg(F.sum('value').alias('sumPrecipitation'))
+ostergotland_precipitationTable = precipitation_sum.join(OT,OT['ST']== precipitationTable['station'],'inner')
+ostergotland_precipitationTable_avg = ostergotland_precipitationTable.where(col('year') >= 1993).where(col('year') <= 2016).groupBy('year','month').agg(F.avg('sumPrecipitation').alias('Avgmontlytemperature')).orderBy(['Avgmontlytemperature'],ascending=[0])
 ostergotland_precipitationTable_avg.rdd.saveAsTextFile("BDASQL/question5")

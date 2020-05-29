@@ -1,0 +1,4 @@
+Row(year=1993, month=7, CountTemp=60476)
+Row(year=2011, month=5, CountTemp=60425)
+Row(year=1972, month=7, CountTemp=60123)
+Row(year=1980, month=7, CountTemp=60062)

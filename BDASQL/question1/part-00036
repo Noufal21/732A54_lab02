@@ -1,2 +1,2 @@
-Row(year=1960, MaxTemp=29.4, MinTemp=-40.0)
 Row(year=1950, MaxTemp=29.4, MinTemp=-42.0)
+Row(year=1960, MaxTemp=29.4, MinTemp=-40.0)

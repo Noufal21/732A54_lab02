@@ -1,3 +1,3 @@
-Row(year=2001, month=8, Avgmontlytemperature=0.0952791647753064)
-Row(year=2007, month=1, Avgmontlytemperature=0.09506001846722072)
-Row(year=1997, month=12, Avgmontlytemperature=0.09411764705882356)
+Row(year=2003, month=5, Avgmontlytemperature=68.45)
+Row(year=2005, month=6, Avgmontlytemperature=67.96666666666665)
+Row(year=2010, month=5, Avgmontlytemperature=67.16666666666669)
